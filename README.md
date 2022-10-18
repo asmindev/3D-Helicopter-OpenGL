@@ -19,12 +19,5 @@ Dan silahkan clone repo ini dengan perintah
 
 ## Kontrol
 
-| Key | Deskripsi                |
-| :--------| :------------------------- |
-| `z` | zoom in dari kiri |
-| `Z` | zoom out dari kanan |
-| `x` | zoom in  dari atas|
-| `X` | zoom out dari bawah |
-| `z` | zoom in |
-
-
+Klik x, X, y, Y, z, Z, r, R, h, H untuk menjalankan helikopter.
+Gunakan klik kanan untuk menampilkan action menu
