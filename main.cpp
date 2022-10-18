@@ -547,6 +547,45 @@ void draw_leg()
   glPopMatrix();
 }
 
+// yaya
+void draw_rotor()
+{
+	glPushMatrix();
+
+	glDisable(GL_LIGHTING);
+	glColor4f(0.75294117647058823529411764705882,0.75294117647058823529411764705882,0.75294117647058823529411764705882,1.0);//silver
+	glLineWidth(5.0);
+
+	glBegin(GL_LINES);//fan stick
+	glVertex3f(0.0, 0.0, 0.0);
+	glVertex3f(0.0, 10.0, 0.0);
+	glEnd();
+    glScalef(2.0, 1.0, 2.0);
+
+
+	//rotor blades
+	for(int i=0; i<4; i++)
+	{
+	glPushMatrix();
+	glRotatef(rotor_angle, 0.0, 1.0, 0.0);
+
+
+	glTranslatef(0.0, 10.0, 0.0);
+	glRotatef(30.0, 1.0, 0.0, 0.0);
+	glTranslatef(0.0, -10.0, 0.0);
+
+	glBegin(GL_QUADS);
+
+	glVertex3f(0.0, 10.0, -0.5);
+	glVertex3f(10.0, 10.0, -1.0);
+	glVertex3f(10.0, 10.0, 1.0);
+	glVertex3f(0.0, 10.0, 0.5);
+
+	glEnd();
+	glPopMatrix();
+
+	glRotatef(90.0, 0.0, 1.0, 0.0);
+
 void house_color_menu(int id) {
   switch (id) {
   case 1:
