@@ -546,6 +546,59 @@ void draw_leg()
 
   glPopMatrix();
 }
+//iswar
+void draw_tail()
+{
+  //tail of heli
+  glPushMatrix();
+  	glDisable(GL_LIGHTING);
+	glColor4f(0.4,0.4,0.4,1.0);//grey
+
+  glBegin(GL_LINE_LOOP);
+  glVertex3f(1.2,-2.0,-9.0);
+  glVertex3f(1.2,2.0,-9.0);
+  glVertex3f(0.2,0.2,-29.0);
+  glVertex3f(0.2,-0.2,-29.0);
+  glEnd();
+
+
+   glBegin(GL_LINE_LOOP);
+  glVertex3f(-1.2,-2.0,-9.0);
+  glVertex3f(-1.2,2.0,-9.0);
+  glVertex3f(-0.2,0.2,-29.0);
+  glVertex3f(-0.2,-0.2,-29.0);
+  glEnd();
+
+  glBegin(GL_LINE_LOOP);
+  glVertex3f(1.2,2.0,-9.0);
+  glVertex3f(-1.2,2.0,-9.0);
+  glVertex3f(-0.2,0.2,-29.0);
+  glVertex3f(0.2,0.2,-29.0);
+  glEnd();
+
+  glBegin(GL_LINE_LOOP);
+  glVertex3f(1.2,-2.0,-9.0);
+  glVertex3f(-1.2,-2.0,-9.0);
+  glVertex3f(-0.2,-0.2,-29.0);
+  glVertex3f(0.2,-0.2,-29.0);
+  glEnd();
+
+  	glEnable(GL_LIGHTING);
+
+  glPopMatrix();
+
+}
+
+void draw_tail_fan()
+{
+	glPushMatrix();
+    glTranslatef(0.0,0.0,-28.0);
+	glRotatef(-90.0,0.0,0.0,1.0);
+	glScalef(0.15,0.11,0.15);
+	draw_rotor();
+	glPopMatrix();
+
+}
 
 // yaya
 void draw_rotor()
