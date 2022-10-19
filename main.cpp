@@ -108,6 +108,43 @@ void light(void) {
   glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, 128.0);
 }
 
+// felonissa
+void help_page() {
+  char str1[] = "About the Package";
+  char str2[] = "The Package presents a helicopter in a scene where the scene "
+                "comprises of grass,helipad,buildings and sky.";
+  char str3[] = "Initially the user sees the top view of Helicopter,when "
+                "he/she starts the Helicopter it raises to certain altitude.";
+  char str4[] = "Now he user can select one of the four views and move the "
+                "Helicopter.Time being he/she can also change the colors.";
+  char str5[] = "HAPPY JOURNEY.......";
+  char str6[] = "Designed and Developed by:";
+  char str7[] = "Akash Kumar R ";
+  char str8[] = "1BI10CS007";
+
+  glPushMatrix();
+  glDisable(GL_LIGHTING);
+  glClearColor(1.0, 1.0, 1.0, 1.0);
+
+  Sprint(2, 56, 0.3, 0.3, 0.3, str1, GLUT_BITMAP_TIMES_ROMAN_24);
+
+  Sprint(12, 55, 0.3, 0.3, 0.3, str2, GLUT_BITMAP_TIMES_ROMAN_24);
+
+  Sprint(14, 54, 0.3, 0.3, 0.3, str3, GLUT_BITMAP_TIMES_ROMAN_24);
+
+  Sprint(16, 53, 0.3, 0.3, 0.3, str4, GLUT_BITMAP_TIMES_ROMAN_24);
+
+  Sprint(5, 51, 0.3, 0.3, 0.3, str5, GLUT_BITMAP_TIMES_ROMAN_24);
+
+  Sprint(180, -20, 0.3, 0.3, 0.3, str6, GLUT_BITMAP_TIMES_ROMAN_24);
+
+  Sprint(420, -400, 0.3, 0.3, 0.3, str7, GLUT_BITMAP_TIMES_ROMAN_24);
+
+  Sprint(0, -400, 0.3, 0.3, 0.3, str8, GLUT_BITMAP_TIMES_ROMAN_24);
+
+  glEnable(GL_LIGHTING);
+  glPopMatrix();
+}
 void display(void) {
 
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -500,259 +537,213 @@ void rotate_menu(int id) {
   glutPostRedisplay();
 }
 // saleh badawi
-void draw_leg()
-{
+void draw_leg() {
   glPushMatrix();
 
-  	glDisable(GL_LIGHTING);
-	glColor4f(0.7,0.7,0.7,1.0);//grey
+  glDisable(GL_LIGHTING);
+  glColor4f(0.7, 0.7, 0.7, 1.0); // grey
 
   glBegin(GL_LINES);
-  //first leg
-  glVertex3f(5,-7,7);
-  glVertex3f(5,-7,-7);
+  // first leg
+  glVertex3f(5, -7, 7);
+  glVertex3f(5, -7, -7);
 
-  glVertex3f(5,-7,7);
-  glVertex3f(5,-6,8);
+  glVertex3f(5, -7, 7);
+  glVertex3f(5, -6, 8);
 
-  glVertex3f(5,-7,-7);
-  glVertex3f(5,-6,-8);
+  glVertex3f(5, -7, -7);
+  glVertex3f(5, -6, -8);
 
-  glVertex3f(0,0.0,5);
-  glVertex3f(5,-7.0,5);
+  glVertex3f(0, 0.0, 5);
+  glVertex3f(5, -7.0, 5);
 
-  glVertex3f(0,0.0,-5);
-  glVertex3f(5,-7.0,-5);
+  glVertex3f(0, 0.0, -5);
+  glVertex3f(5, -7.0, -5);
 
-   glVertex3f(-5,-7,7);
-  glVertex3f(-5,-7,-7);
+  glVertex3f(-5, -7, 7);
+  glVertex3f(-5, -7, -7);
 
-  //second leg
-  glVertex3f(-5,-7,7);
-  glVertex3f(-5,-6,8);
+  // second leg
+  glVertex3f(-5, -7, 7);
+  glVertex3f(-5, -6, 8);
 
-  glVertex3f(-5,-7,-7);
-  glVertex3f(-5,-6,-8);
+  glVertex3f(-5, -7, -7);
+  glVertex3f(-5, -6, -8);
 
-  glVertex3f(0,0.0,5);
-  glVertex3f(-5,-7.0,5);
+  glVertex3f(0, 0.0, 5);
+  glVertex3f(-5, -7.0, 5);
 
-  glVertex3f(0,0.0,-5);
-  glVertex3f(-5,-7.0,-5);
+  glVertex3f(0, 0.0, -5);
+  glVertex3f(-5, -7.0, -5);
 
   glEnd();
 
-  	glEnable(GL_LIGHTING);
+  glEnable(GL_LIGHTING);
 
   glPopMatrix();
 }
-//iswar
-void draw_tail()
-{
-  //tail of heli
+// iswar
+void draw_tail() {
+  // tail of heli
   glPushMatrix();
-  	glDisable(GL_LIGHTING);
-	glColor4f(0.4,0.4,0.4,1.0);//grey
+  glDisable(GL_LIGHTING);
+  glColor4f(0.4, 0.4, 0.4, 1.0); // grey
 
   glBegin(GL_LINE_LOOP);
-  glVertex3f(1.2,-2.0,-9.0);
-  glVertex3f(1.2,2.0,-9.0);
-  glVertex3f(0.2,0.2,-29.0);
-  glVertex3f(0.2,-0.2,-29.0);
-  glEnd();
-
-
-   glBegin(GL_LINE_LOOP);
-  glVertex3f(-1.2,-2.0,-9.0);
-  glVertex3f(-1.2,2.0,-9.0);
-  glVertex3f(-0.2,0.2,-29.0);
-  glVertex3f(-0.2,-0.2,-29.0);
+  glVertex3f(1.2, -2.0, -9.0);
+  glVertex3f(1.2, 2.0, -9.0);
+  glVertex3f(0.2, 0.2, -29.0);
+  glVertex3f(0.2, -0.2, -29.0);
   glEnd();
 
   glBegin(GL_LINE_LOOP);
-  glVertex3f(1.2,2.0,-9.0);
-  glVertex3f(-1.2,2.0,-9.0);
-  glVertex3f(-0.2,0.2,-29.0);
-  glVertex3f(0.2,0.2,-29.0);
+  glVertex3f(-1.2, -2.0, -9.0);
+  glVertex3f(-1.2, 2.0, -9.0);
+  glVertex3f(-0.2, 0.2, -29.0);
+  glVertex3f(-0.2, -0.2, -29.0);
   glEnd();
 
   glBegin(GL_LINE_LOOP);
-  glVertex3f(1.2,-2.0,-9.0);
-  glVertex3f(-1.2,-2.0,-9.0);
-  glVertex3f(-0.2,-0.2,-29.0);
-  glVertex3f(0.2,-0.2,-29.0);
+  glVertex3f(1.2, 2.0, -9.0);
+  glVertex3f(-1.2, 2.0, -9.0);
+  glVertex3f(-0.2, 0.2, -29.0);
+  glVertex3f(0.2, 0.2, -29.0);
   glEnd();
 
-  	glEnable(GL_LIGHTING);
+  glBegin(GL_LINE_LOOP);
+  glVertex3f(1.2, -2.0, -9.0);
+  glVertex3f(-1.2, -2.0, -9.0);
+  glVertex3f(-0.2, -0.2, -29.0);
+  glVertex3f(0.2, -0.2, -29.0);
+  glEnd();
+
+  glEnable(GL_LIGHTING);
 
   glPopMatrix();
-
 }
 
-void draw_tail_fan()
-{
-	glPushMatrix();
-    glTranslatef(0.0,0.0,-28.0);
-	glRotatef(-90.0,0.0,0.0,1.0);
-	glScalef(0.15,0.11,0.15);
-	draw_rotor();
-	glPopMatrix();
-
+void draw_tail_fan() {
+  glPushMatrix();
+  glTranslatef(0.0, 0.0, -28.0);
+  glRotatef(-90.0, 0.0, 0.0, 1.0);
+  glScalef(0.15, 0.11, 0.15);
+  draw_rotor();
+  glPopMatrix();
 }
 
 // yaya
-void draw_rotor()
-{
-	glPushMatrix();
+void draw_rotor() {
+  glPushMatrix();
 
-	glDisable(GL_LIGHTING);
-	glColor4f(0.75294117647058823529411764705882,0.75294117647058823529411764705882,0.75294117647058823529411764705882,1.0);//silver
-	glLineWidth(5.0);
+  glDisable(GL_LIGHTING);
+  glColor4f(0.75294117647058823529411764705882,
+            0.75294117647058823529411764705882,
+            0.75294117647058823529411764705882, 1.0); // silver
+  glLineWidth(5.0);
 
-	glBegin(GL_LINES);//fan stick
-	glVertex3f(0.0, 0.0, 0.0);
-	glVertex3f(0.0, 10.0, 0.0);
-	glEnd();
-    glScalef(2.0, 1.0, 2.0);
+  glBegin(GL_LINES); // fan stick
+  glVertex3f(0.0, 0.0, 0.0);
+  glVertex3f(0.0, 10.0, 0.0);
+  glEnd();
+  glScalef(2.0, 1.0, 2.0);
 
+  // rotor blades
+  for (int i = 0; i < 4; i++) {
+    glPushMatrix();
+    glRotatef(rotor_angle, 0.0, 1.0, 0.0);
 
-	//rotor blades
-	for(int i=0; i<4; i++)
-	{
-	glPushMatrix();
-	glRotatef(rotor_angle, 0.0, 1.0, 0.0);
+    glTranslatef(0.0, 10.0, 0.0);
+    glRotatef(30.0, 1.0, 0.0, 0.0);
+    glTranslatef(0.0, -10.0, 0.0);
 
+    glBegin(GL_QUADS);
 
-	glTranslatef(0.0, 10.0, 0.0);
-	glRotatef(30.0, 1.0, 0.0, 0.0);
-	glTranslatef(0.0, -10.0, 0.0);
+    glVertex3f(0.0, 10.0, -0.5);
+    glVertex3f(10.0, 10.0, -1.0);
+    glVertex3f(10.0, 10.0, 1.0);
+    glVertex3f(0.0, 10.0, 0.5);
 
-	glBegin(GL_QUADS);
+    glEnd();
+    glPopMatrix();
 
-	glVertex3f(0.0, 10.0, -0.5);
-	glVertex3f(10.0, 10.0, -1.0);
-	glVertex3f(10.0, 10.0, 1.0);
-	glVertex3f(0.0, 10.0, 0.5);
+    glRotatef(90.0, 0.0, 1.0, 0.0);
 
-	glEnd();
-	glPopMatrix();
+    void house_color_menu(int id) {
+      switch (id) {
+      case 1:
+        bc = 1;
+        break;
+      case 2:
+        bc = 2;
+        break;
+      case 3:
+        bc = 0;
+        break;
+      }
+      glutPostRedisplay();
+    }
+    void helicopter_color_menu(int id) {
+      switch (id) {
+      case 1:
+        hc = 1;
+        break;
+      case 2:
+        hc = 2;
+        break;
+      case 3:
+        hc = 0;
+        break;
+      }
+      glutPostRedisplay();
+    }
 
-	glRotatef(90.0, 0.0, 1.0, 0.0);
+    int main(int argc, char **argv) {
+      glutInit(&argc, argv);
+      glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH | GLUT_RGBA);
+      glutInitWindowSize(250, 250);
+      glutInitWindowPosition(0, 0);
+      glutCreateWindow("The Helicopter");
+      init();
+      glutDisplayFunc(display);
 
-void house_color_menu(int id) {
-  switch (id) {
-  case 1:
-    bc = 1;
-    break;
-  case 2:
-    bc = 2;
-    break;
-  case 3:
-    bc = 0;
-    break;
-  }
-  glutPostRedisplay();
-}
-// felonissa
-void help_page()
-{
-	char str1[]="About the Package";
-	char str2[]="The Package presents a helicopter in a scene where the scene comprises of grass,helipad,buildings and sky.";
-	char str3[]="Initially the user sees the top view of Helicopter,when he/she starts the Helicopter it raises to certain altitude.";
-	char str4[]="Now he user can select one of the four views and move the Helicopter.Time being he/she can also change the colors.";
-	char str5[]="HAPPY JOURNEY.......";
-	char str6[]="Designed and Developed by:";
-	char str7[]="Akash Kumar R ";
-	char str8[]="1BI10CS007";
+      glutIdleFunc(idle);
+      glutKeyboardFunc(keyboard);
+      glutSpecialFunc(Specialkey);
+      glutSpecialUpFunc(Releasekey);
+      glutReshapeFunc(reshape);
 
-	glPushMatrix();
-	glDisable(GL_LIGHTING);
-	glClearColor(1.0,1.0,1.0,1.0);
+      sub_menu[0] = glutCreateMenu(view_menu);
+      glutAddMenuEntry("Ground View", 1);
+      glutAddMenuEntry("Pilot View", 2);
+      glutAddMenuEntry("Landscape View", 3);
+      glutAddMenuEntry("Follow View", 4);
 
-	Sprint(2,56,0.3,0.3,0.3,str1,GLUT_BITMAP_TIMES_ROMAN_24);
+      sub_menu[1] = glutCreateMenu(rotate_menu);
+      glutAddMenuEntry("90 degree", 1);
+      glutAddMenuEntry("-90 degree", 2);
+      glutAddMenuEntry("0 degree", 3);
 
+      sub_menu[2] = glutCreateMenu(house_color_menu);
+      glutAddMenuEntry("Red and Blue", 1);
+      glutAddMenuEntry("Brown and Orange", 2);
+      glutAddMenuEntry("default", 3);
 
-	Sprint(12,55,0.3,0.3,0.3,str2,GLUT_BITMAP_TIMES_ROMAN_24);
+      sub_menu[3] = glutCreateMenu(helicopter_color_menu);
+      glutAddMenuEntry("khakhi", 1);
+      glutAddMenuEntry("blue", 2);
+      glutAddMenuEntry("default", 3);
 
+      glutCreateMenu(my_menu);
+      glutAddMenuEntry("START", 1);
+      glutAddSubMenu("Viewing", sub_menu[0]);
+      glutAddSubMenu("Rotate", sub_menu[1]);
+      glutAddMenuEntry("Move Up", 2);
+      glutAddSubMenu("Color of House", sub_menu[2]);
+      glutAddSubMenu("Color of Helicopter", sub_menu[3]);
+      glutAddMenuEntry("STOP", 3);
+      glutAddMenuEntry("Help", 4);
+      glutAddMenuEntry("Exit", 5);
+      glutAttachMenu(GLUT_RIGHT_BUTTON);
 
-	Sprint(14,54,0.3,0.3,0.3,str3,GLUT_BITMAP_TIMES_ROMAN_24);
-
-	Sprint(16,53,0.3,0.3,0.3,str4,GLUT_BITMAP_TIMES_ROMAN_24);
-
-	Sprint(5,51,0.3,0.3,0.3,str5,GLUT_BITMAP_TIMES_ROMAN_24);
-
-	Sprint(180,-20,0.3,0.3,0.3,str6,GLUT_BITMAP_TIMES_ROMAN_24);
-
-	Sprint(420,-400,0.3,0.3,0.3,str7,GLUT_BITMAP_TIMES_ROMAN_24);
-
-	Sprint(0,-400,0.3,0.3,0.3,str8,GLUT_BITMAP_TIMES_ROMAN_24);
-
-	glEnable(GL_LIGHTING);
-	glPopMatrix();
-
-}
-void helicopter_color_menu(int id) {
-  switch (id) {
-  case 1:
-    hc = 1;
-    break;
-  case 2:
-    hc = 2;
-    break;
-  case 3:
-    hc = 0;
-    break;
-  }
-  glutPostRedisplay();
-}
-
-int main(int argc, char **argv) {
-  glutInit(&argc, argv);
-  glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH | GLUT_RGBA);
-  glutInitWindowSize(250, 250);
-  glutInitWindowPosition(0, 0);
-  glutCreateWindow("The Helicopter");
-  init();
-  glutDisplayFunc(display);
-
-  glutIdleFunc(idle);
-  glutKeyboardFunc(keyboard);
-  glutSpecialFunc(Specialkey);
-  glutSpecialUpFunc(Releasekey);
-  glutReshapeFunc(reshape);
-
-  sub_menu[0] = glutCreateMenu(view_menu);
-  glutAddMenuEntry("Ground View", 1);
-  glutAddMenuEntry("Pilot View", 2);
-  glutAddMenuEntry("Landscape View", 3);
-  glutAddMenuEntry("Follow View", 4);
-
-  sub_menu[1] = glutCreateMenu(rotate_menu);
-  glutAddMenuEntry("90 degree", 1);
-  glutAddMenuEntry("-90 degree", 2);
-  glutAddMenuEntry("0 degree", 3);
-
-  sub_menu[2] = glutCreateMenu(house_color_menu);
-  glutAddMenuEntry("Red and Blue", 1);
-  glutAddMenuEntry("Brown and Orange", 2);
-  glutAddMenuEntry("default", 3);
-
-  sub_menu[3] = glutCreateMenu(helicopter_color_menu);
-  glutAddMenuEntry("khakhi", 1);
-  glutAddMenuEntry("blue", 2);
-  glutAddMenuEntry("default", 3);
-
-  glutCreateMenu(my_menu);
-  glutAddMenuEntry("START", 1);
-  glutAddSubMenu("Viewing", sub_menu[0]);
-  glutAddSubMenu("Rotate", sub_menu[1]);
-  glutAddMenuEntry("Move Up", 2);
-  glutAddSubMenu("Color of House", sub_menu[2]);
-  glutAddSubMenu("Color of Helicopter", sub_menu[3]);
-  glutAddMenuEntry("STOP", 3);
-  glutAddMenuEntry("Help", 4);
-  glutAddMenuEntry("Exit", 5);
-  glutAttachMenu(GLUT_RIGHT_BUTTON);
-
-  glutMainLoop();
-}
+      glutMainLoop();
+    }
