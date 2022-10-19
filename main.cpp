@@ -233,7 +233,13 @@ void fly_effect() {
   if (left_tilt)
     glRotatef(-30.0, 0.0, 0.0, 1.0);
 }
-
+void draw_body(){
+    glPushMatrix();
+    glScalef(1.0, 1.0, 2.0);
+    glutSolidSphere(5.0, 32, 32);
+    glScalef(1.0, 1.0, 0.5);
+    glPopMatrix();
+    }
 // Asmin
 void draw_heli() {
 
@@ -667,8 +673,10 @@ void draw_rotor() {
     glPopMatrix();
 
     glRotatef(90.0, 0.0, 1.0, 0.0);
-
-    void house_color_menu(int id) {
+gluCylinder(gluNewQuadric(),25.0,0.0,25.0,32,32); glTranslatef(0.0,-15.0,0.0); 	glPopMatrix();
+}
+}
+void house_color_menu(int id) {
       switch (id) {
       case 1:
         bc = 1;
