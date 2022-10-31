@@ -29,7 +29,7 @@
 	<string.h>
 	"utils/draw_body.cpp"
 
-1666146648 source:c:\users\asus\documents\semester 3\new folder\3d-helicopter-opengl\main.cpp
+1666172030 source:c:\users\asus\documents\semester 3\new folder\3d-helicopter-opengl\main.cpp
 	<GL/glut.h>
 	<math.h>
 	<stdlib.h>
